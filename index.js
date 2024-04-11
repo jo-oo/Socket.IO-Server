@@ -17,6 +17,7 @@ const ioServer = new Server(server, {
   },
 });
 
+
 //gives us a socket back
 ioServer.on('connection', (socket) => {
   console.log(`Användare ansluten: ${socket.id}`);
@@ -26,9 +27,13 @@ ioServer.on('connection', (socket) => {
     console.log('Användare frånkopplad');
   });
 
+  socket.emit('ny_data', { message: 'Hej från servern!' });
+
   setInterval(function(){
-    socket.emit('ny_data', { message: 'Hej från servern!' });
-    }, 15000);
+    socket.emit('coordinates_from_server', { message: 'Hej, här kommer koordinater!' });
+
+  }, 5000);
+
 });
 
 server.listen(PORT, () => {
