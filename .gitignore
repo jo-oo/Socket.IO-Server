@@ -1,0 +1,41 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+
+# Logs
+logs/
+*.log
+
+# Debug logs
+debug.log
+
+# Dependency directories
+jspm_packages/
+typings/
+
+# IDE specific files
+.idea/
+.vscode/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Config files
+npm-debug.log
+npm-debug.log.*
+
+# TypeScript compiled output (if applicable)
+dist/
