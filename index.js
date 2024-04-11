@@ -17,6 +17,15 @@ const ioServer = new Server(server, {
   },
 });
 
+let myData = {
+  id: 1,
+  coordinates:[
+      51.49, 
+      -0.092
+    ],
+  message : 'mydata'
+}
+
 
 //gives us a socket back
 ioServer.on('connection', (socket) => {
@@ -27,11 +36,12 @@ ioServer.on('connection', (socket) => {
     console.log('Användare frånkopplad');
   });
 
-  socket.emit('ny_data', { message: 'Hej från servern!' });
+  socket.emit('message', { message: 'Hej från servern!' });
 
   setInterval(function(){
-    socket.emit('coordinates_from_server', { message: 'Hej, här kommer koordinater!' });
-
+   
+   
+    socket.emit('myData' , myData);
   }, 5000);
 
 });
