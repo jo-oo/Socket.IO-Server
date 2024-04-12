@@ -17,14 +17,41 @@ const ioServer = new Server(server, {
   },
 });
 
-let myData = {
-  id: 1,
-  coordinates:[
-      51.49, 
-      -0.092
-    ],
-  message : 'mydata'
-}
+let myData = [
+  {
+    id: 1,
+    departure: "Malmö",
+    destination: "Göteborg",
+    coordinates:[
+      51.506, 
+      -0.091
+      ],
+    delay: "3 minutes",
+    message: `hej`
+  },
+  {
+    id: 2,
+    departure: "Lund",
+    destination: "Halmstad",
+    coordinates:[
+        51.5063, 
+        -0.0912
+      ],
+    delay: "8 minutes",
+    message: 'mydata'
+  },
+  {
+    id: 3,
+    departure: "Malmö",
+    destination: "Stockholm",
+    coordinates:[
+        51.508, 
+        -0.0912
+      ],
+    delay: "10 minutes",
+    message: 'mydata'
+  },
+]
 
 
 //gives us a socket back
@@ -38,9 +65,7 @@ ioServer.on('connection', (socket) => {
 
   socket.emit('message', { message: 'Hej från servern!' });
 
-  setInterval(function(){
-   
-   
+  setInterval(function(){ 
     socket.emit('myData' , myData);
   }, 5000);
 
