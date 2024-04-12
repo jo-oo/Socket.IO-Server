@@ -26,6 +26,8 @@ let myData = [
       51.506, 
       -0.091
       ],
+    departureTime: "10.52",
+    arrivalTime: "14.15",
     delay: "3 minutes",
     message: `hej`
   },
@@ -37,6 +39,8 @@ let myData = [
         51.5063, 
         -0.0912
       ],
+    departureTime: "11.00",
+    arrivalTime: "14.00",
     delay: "8 minutes",
     message: 'mydata'
   },
@@ -48,6 +52,8 @@ let myData = [
         51.508, 
         -0.0912
       ],
+    departureTime: "13.30",
+    arrivalTime: "18.30",
     delay: "10 minutes",
     message: 'mydata'
   },
